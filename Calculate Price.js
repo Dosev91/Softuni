@@ -1,29 +1,69 @@
 
 function calciletePrice(heigh, lenght, width, typeWork) {
 
-    let wals1 = lenght * heigh;
-    let wals2 = width * heigh;
+    let wall1 = lenght * heigh;
+    let wall2 = width * heigh;
     let ceil = lenght * width;
     let kvm = 0;
     let sum = 0;
     let arrs = [];
 
-    if (typeWork == 'grid') {
-        kvm = (wals1 * 2) + (wals2 * 2);
-        sum = (ceil * 50) + (kvm * 30);
+    if (typeWork == 'walls') {
+        kvm = (wall1 * 2) + (wall2 * 2);
+        sum = (Math.ceil(ceil) * 50) + (Math.ceil(kvm) * 30);
         arrs.push(kvm);
         arrs.push(ceil);
         arrs.push(sum);
         return arrs;
-    } else {
-        ceil = (wals1 * 2) + (wals2 * 2) + ceil;
-        sum = ceil * 50;
+    } else if (typeWork == 'GK') {
+        ceil = (wall1 * 2) + (wall2 * 2) + ceil;
+        sum = Math.ceil(ceil) * 50;
+        arrs.push(kvm);
+        arrs.push(ceil);
+        arrs.push(sum);
+        return arrs;
+    } else if (typeWork == 'wall1GK') {
+        ceil = ceil + wall1;
+        kvm = wall1 + (wall2 * 2);
+        sum = (Math.ceil(ceil) * 50) + (Math.ceil(kvm) * 30);
+        arrs.push(kvm);
+        arrs.push(ceil);
+        arrs.push(sum);
+        return arrs;
+
+    } else if (typeWork == 'wall2GK') {
+        ceil = ceil + wall2;
+        kvm = wall2 + (wall1 * 2);
+        sum = (Math.ceil(ceil) * 50) + (Math.ceil(kvm) * 30);
+        arrs.push(kvm);
+        arrs.push(ceil);
+        arrs.push(sum);
+        return arrs;
+    } else if (typeWork == 'wall12GK') {
+        ceil = ceil + wall2 + wall1;
+        kvm = wall2 + wall1;
+        sum = (Math.ceil(ceil) * 50) + (Math.ceil(kvm) * 30);
+        arrs.push(kvm);
+        arrs.push(ceil);
+        arrs.push(sum);
+        return arrs;
+    } else if (typeWork == 'wall112GK') {
+        ceil = ceil + wall2 + (wall1 * 2);
+        kvm = wall2;
+        sum = (Math.ceil(ceil) * 50) + (Math.ceil(kvm) * 30);
+        arrs.push(kvm);
+        arrs.push(ceil);
+        arrs.push(sum);
+        return arrs;
+    } else if (typeWork == 'wall122GK') {
+        ceil = ceil + wall1 + (wall2 * 2);
+        kvm = wall1;
+        sum = (Math.ceil(ceil) * 50) + (Math.ceil(kvm) * 30);
         arrs.push(kvm);
         arrs.push(ceil);
         arrs.push(sum);
         return arrs;
     }
-
 }
 
 function input(arr) {
@@ -71,6 +111,8 @@ function input(arr) {
         console.log(`${kay} - ${Math.ceil(value)}`);
     }
 }
-input([2.65, 3.45, 3.45, 'grid', 2.60, 5.60, 3.45, 'grid', 2.65, 3.48, 3.40, 'grid', 2.60, 3.40, 2.5, 'grid', 2.60, 1.00, 1.00, 'grid', 2.60, 1.30, 3.40, 'grid', 2.60, 0.85, 2.60, 'grid'])
-//input([2.7, 5.70, 3.30, "gk"])
+input([2.65, 3.45, 3.45, 'walls', 2.60, 5.60, 3.45, 'walls', 2.65, 3.48, 3.40, 'walls', 2.60, 3.40, 2.5, 'walls', 2.60, 1.00, 1.00, 'walls', 2.60, 1.30, 3.40, 'walls', 2.60, 0.85, 2.60, 'walls'])
+//input([2.40, 3.80, 2.64, "wall112GK"])
+
+
 

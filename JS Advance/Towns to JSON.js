@@ -1,25 +1,25 @@
 function townJSON(input) {
-    const regex = /([A-z.0-9]+)/g;
+    // const regex = /([A-z.0-9]+)/g;
 
-    const headers = input.shift().match(regex);
+    // const headers = input.shift().match(regex);
 
-    const result = [];
+    // const result = [];
 
-    for (const text of input) {
-        const values = text.match(regex);
+    // for (const text of input) {
+    //     const values = text.match(regex);
 
-        result.push({
-            [headers[0]]: isNaN(parseInt([values[0]])) ? [values[0]] : +(+[values[0]]).toFixed(2),
-            [headers[1]]: isNaN(parseInt([values[1]])) ? [values[1]] : +(+[values[1]]).toFixed(2),
-            [headers[2]]: isNaN(parseInt([values[2]])) ? [values[2]] : +(+[values[2]]).toFixed(2),
-        });
-    }
+    //     result.push({
+    //         [headers[0]]: isNaN(parseInt([values[0]])) ? values[0] : +(+values[0]).toFixed(2),
+    //         [headers[1]]: isNaN(parseInt([values[1]])) ? values[1] : +(+values[1]).toFixed(2),
+    //         [headers[2]]: isNaN(parseInt([values[2]])) ? values[2] : +(+values[2]).toFixed(2),
+    //     });
+    // }
 
-    return JSON.stringify(result);
+    // return JSON.stringify(result);
 
     // <====================================================> 
-    /**
-    const regex = /([A-z.0-9]+)/g;
+    
+    const regex = /[A-z. 0-9]+/g;
  
     const headers = input.shift().match(regex);
  
@@ -43,7 +43,7 @@ function townJSON(input) {
  
  
     return JSON.stringify(result);
-    */
+    
 
     // <====================================================> 
 

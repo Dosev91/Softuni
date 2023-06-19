@@ -1,0 +1,23 @@
+function timeToWalk(steps, meters, speed) {
+
+
+    const distance = steps * meters;
+    const speedMeterSec = speed / 3.6;
+    const rest = Math.floor(distance / 500);
+    const time = (distance / speedMeterSec)+rest;
+
+    const timeMin = Math.floor(time / 60);
+    const timeSec = Math.round(time - timeMin * 60);
+    const timehr = Math.floor(time / 3600);
+
+    const hh = timehr < 10 ? "0" : "";
+    const mm = timeMin + rest < 10 ? "0" : "";
+    const ss = timeSec < 10 ? "0" : "";
+
+
+    const outPut = `${hh + timehr}:${+mm + timeMin }:${ss + timeSec}`
+    console.log(outPut);
+
+
+}
+timeToWalk(4000, 0.60, 5)

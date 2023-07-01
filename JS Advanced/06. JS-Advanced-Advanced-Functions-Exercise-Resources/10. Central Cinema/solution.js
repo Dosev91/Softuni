@@ -16,21 +16,21 @@ function solve() {
         const div = document.createElement("div");
         const strong2 = document.createElement("strong");
         strong2.textContent = Number(ticketPrice.value).toFixed(2);
-        const input = document.createElement("input");
-        input.placeholder = "Tickets Sold";
-        const button = document.createElement("button");
-        button.textContent = "Archive";
+        const ticketSoldInput = document.createElement("input");
+        ticketSoldInput.placeholder = "Tickets Sold";
+        const archiveBtn = document.createElement("button");
+        archiveBtn.textContent = "Archive";
 
         div.appendChild(strong2);
-        div.appendChild(input);
-        div.appendChild(button);
+        div.appendChild(ticketSoldInput);
+        div.appendChild(archiveBtn);
         li.appendChild(span);
         li.appendChild(strong);
         li.appendChild(div);
 
-        button.addEventListener("click", (e) => {
+        archiveBtn.addEventListener("click", (e) => {
 
-            if (isNaN(Number(input.value))) {
+            if (ticketSoldInput.value === '' || isNaN(Number(ticketSoldInput.value))) {
                 return;
             }
             const li2 = document.createElement("li");
@@ -40,7 +40,7 @@ function solve() {
             span2.textContent = span.textContent;
 
             const strong3 = document.createElement("strong");
-            strong3.textContent = `Total amount: ${(Number(input.value) * Number(strong2.textContent)).toFixed(2)}`;
+            strong3.textContent = `Total amount: ${(Number(ticketSoldInput.value) * Number(strong2.textContent)).toFixed(2)}`;
 
             const deleteBtn = document.createElement("button");
             deleteBtn.textContent = "Delete";
@@ -58,8 +58,8 @@ function solve() {
             })
 
             li2.appendChild(span2);
-            li2.appendChild(deleteBtn);
             li2.appendChild(strong3);
+            li2.appendChild(deleteBtn);
             archive.appendChild(li2);
         })
 

@@ -37,7 +37,7 @@ function requestValidator(requestObj) {
         throw new Error(`Invalid request header: Invalid Message`);
     }
 
-    return requestObj
+    return requestObj;
 }
  
 //a

@@ -52,7 +52,10 @@ describe("mathEnforcer", () => {
         });
         it("Should return sum of two numbers", () => {
             expect(mathEnforcer.sum(15, 5)).to.be.equal(20);
-        });
+        })
+        it("Should return sum of two numbers", () => {
+            expect(mathEnforcer.sum(15, 5)).to.be.equal(20);
+        })
 
     })
 })

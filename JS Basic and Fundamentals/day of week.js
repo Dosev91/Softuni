@@ -11,4 +11,4 @@ function slove(input) {
         default: console.log("Error"); break;
     }
 }
-slove(["5"])
+slove([" 1"])

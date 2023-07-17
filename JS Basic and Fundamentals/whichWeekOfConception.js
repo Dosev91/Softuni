@@ -42,4 +42,4 @@ function day(firstDate, secondDate) {
 }
 
 
-whichWeek([04, 10, 2022], [04, 01, 2023])
+whichWeek([04, 10, 2022], [10, 07, 2023])

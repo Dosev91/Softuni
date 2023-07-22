@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Камък, ножица, хартия</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Rock - Scissors - Paper</h1>
+        <div class="game">
+            <button class="choice" onclick="play('rock')">Rock </button>
+            <button class="choice" onclick="play('scissors')">Scissors</button>
+            <button class="choice" onclick="play('paper')">Paper</button>
+        </div>
+        <div id="result"></div>
+        <button class="refresh-button" onclick="location.reload()">Refresh</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

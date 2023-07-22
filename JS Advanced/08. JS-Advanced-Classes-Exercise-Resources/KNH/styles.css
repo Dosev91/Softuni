@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: #000; /* Промени цвета на заглавието на черно */
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+.game {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.choice {
+    font-size: 24px;
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: #000; /* Промени цвета на бутоните на черно */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.choice:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    font-size: 30px;
+    font-weight: bold;
+    color: #000; /* Промени цвета на резултатния текст на черно */
+}
+
+.refresh-button {
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #000; /* Промени цвета на бутона за рефреш на черно */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 30px;
+}
+
+.refresh-button:hover {
+    background-color: #0056b3;
+}

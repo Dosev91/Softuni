@@ -5,11 +5,15 @@ function solve() {
     const nextBtn = document.getElementById("next-btn");
     const reservationList = document.querySelectorAll("#info-reservations ul");
     const confirmReservation = document.querySelectorAll("#confirm-reservations ul");
+    const verification = document.getElementById("verification");
+
+    //buttons
     const editBtn = document.createElement("button");
     const countinueBtn = document.createElement("button");
     const confirmBtn = document.createElement("button");
     const cancelBtn = document.createElement("button");
 
+    //HTML elements
     const li = document.createElement("li");
     const article = document.createElement("article");
     const h3 = document.createElement("h3");
@@ -34,7 +38,7 @@ function solve() {
         const kf = splitOutCheck[1] + "-" + splitOutCheck[2] + "-" + splitOutCheck[0];
         const newDeteOutCheck = new Date(kf);
 
-        const regex = /^[a-zA-Z]*$/
+        const regex = /^[a-zA-Z]*$/;
 
         const isValidName = regex.test(fname);
         const isValidLName = regex.test(lname);
@@ -90,7 +94,7 @@ function solve() {
 
     countinueBtn.addEventListener("click", () => {
 
-        confirmReservation[0].appendChild(li);
+
         li.removeChild(editBtn);
         li.removeChild(countinueBtn);
         confirmBtn.className = "confirm-btn";
@@ -99,8 +103,35 @@ function solve() {
         cancelBtn.textContent = "Cancel";
         li.appendChild(cancelBtn);
         li.appendChild(confirmBtn);
+        confirmReservation[0].appendChild(li);
 
-    })
+    });
+
+    cancelBtn.addEventListener("click", () => {
+
+        li.removeChild(cancelBtn);
+        li.removeChild(confirmBtn);
+        nextBtn.disabled = false;
+
+        confirmReservation[0].removeChild(li);
+
+        verification.className = "reservation-cancelled";
+        verification.textContent = "Cancelled.";
+
+    });
+
+    confirmBtn.addEventListener("click", () => {
+
+        nextBtn.disabled = false;
+
+        li.removeChild(cancelBtn);
+        li.removeChild(confirmBtn);
+        confirmReservation[0].removeChild(li);
+
+        verification.className = "reservation-confirmed";
+        verification.textContent = "Confirmed.";
+
+    });
 
 }
 

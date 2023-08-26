@@ -1,23 +1,22 @@
-function getSum(x, y) {
+function getSum(a, b) {
 
     let sum = 0;
 
-    if (x > y) {
-        sum = x;
-        for (let i = y; i < x; i++) {
+    if (a > b) {
+        sum = a;
+        for (let i = b; i < a; i++) {
             sum += i;
         }
-    } else if (y > x) {
-        sum = y;
-        for (let i = x; i < y; i++) {
+    } else if (b > a) {
+        sum = b;
+        for (let i = a; i < b; i++) {
             sum += i;
         }
     } else {
-        return x;
+        return a;
     }
 
-    return sum;
-
+    console.log(sum) ;
 }
 
-getSum(1, 1)
+getSum(1, 5)

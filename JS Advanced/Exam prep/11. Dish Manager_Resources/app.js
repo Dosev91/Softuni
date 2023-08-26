@@ -4,8 +4,8 @@ function solve() {
   // get need el 
   const subBtn = document.getElementById("form-btn");
   const inProgres = document.getElementById("in-progress");
-  // const confirmReservation = document.querySelectorAll("#confirm-reservations ul");
-  // const verification = document.getElementById("verification");
+  const finished = document.getElementById("finished");
+  const count = document.getElementById("progress-count");
 
   //HTML elements
   const li = document.createElement("li");
@@ -17,8 +17,7 @@ function solve() {
   //buttons
   const editBtn = document.createElement("button");
   const completeBtn = document.createElement("button");
-  // const confirmBtn = document.createElement("button");
-  // const cancelBtn = document.createElement("button");
+  const clearBtn = document.getElementById("clear-btn");
 
   subBtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -63,9 +62,9 @@ function solve() {
       document.getElementById('genderSelect').value = 'Male';
       document.getElementById('task').value = '';
 
+      count.textContent = Number(count.textContent) + 1;
+
     }
-
-
     editBtn.addEventListener("click", () => {
 
       subBtn.disabled = false;
@@ -77,8 +76,24 @@ function solve() {
       document.getElementById('task').value = textArea;
 
       inProgres.removeChild(li);
+
+      count.textContent = Number(count.textContent) - 1;
+    });
+
+    completeBtn.addEventListener("click", () => {
+
+      inProgres.removeChild(li);
+      li.removeChild(editBtn);
+      li.removeChild(completeBtn);
+      finished.appendChild(li)
+
+      count.textContent = Number(count.textContent) - 1;
+
+    });
+    clearBtn.addEventListener("click", () => {
+
+      finished.removeChild(li);
+
     });
   });
-
-
 }

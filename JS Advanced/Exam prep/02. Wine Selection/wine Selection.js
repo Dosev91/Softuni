@@ -82,10 +82,10 @@ class WineSelection {
 }
 //----------------------------------------------input1----------------------------------------------
 
-//              const selection = new WineSelection(2)
-//              console.log(selection.reserveABottle('Sauvignon Blanc Marlborough', 'White', 50));
-//              console.log(selection.reserveABottle('Cabernet Sauvignon Napa Valley', 'Red', 120));
-//              console.log(selection.reserveABottle('Bodegas Godelia Mencía', 'Rose', 144));
+             const selection = new WineSelection(2)
+             console.log(selection.reserveABottle('Sauvignon Blanc Marlborough', 'White', 50));
+             console.log(selection.reserveABottle('Cabernet Sauvignon Napa Valley', 'Red', 120));
+             console.log(selection.reserveABottle('Bodegas Godelia Mencía', 'Rose', 144));
 
 //     output
 

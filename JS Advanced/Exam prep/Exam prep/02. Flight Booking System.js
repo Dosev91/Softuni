@@ -97,6 +97,7 @@ class FlightBookingSystem {
                 let output = "Cheap bookings:\n";
                 output += cheapFligts.map(f => `${f.passengerName} booked for flight ${f.flightNumber}.\n`).join('')
 
+               
                 return output;
 
             }
@@ -112,12 +113,12 @@ class FlightBookingSystem {
             if (expensiveFlights.length === 0) {
                 return "No expensive bookings found."
             } else {
-
+               
                 let output = "Expensive bookings:\n";
                 output += expensiveFlights.map(f => `${f.passengerName} booked for flight ${f.flightNumber}.\n`).join('')
 
                 return output
-            }5
+            } 
         }
 
     }

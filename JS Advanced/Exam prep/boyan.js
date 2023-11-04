@@ -19,7 +19,7 @@ const obj = {
         prop18: "_Dafo"
     },
     prop11: "Ioncheto",
-    prop12: "_Mitko",
+    prop12: 6,
     prop13: "Dosev"
 }
 

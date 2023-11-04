@@ -75,11 +75,11 @@ class FlightBookingSystem {
 
         if (criteria === "all") {
 
-            console.log(`All bookings(${this.bookingsCount}):`);
+            let output = `All bookings(${this.bookingsCount}):\n`;
 
-            this.bookings.forEach(f => {
-                console.log(`${f.passengerName} booked for flight ${f.flightNumber}.`);
-            })
+            output += this.bookings.map(f => `${f.passengerName} booked for flight ${f.flightNumber}.`).join('\n')
+
+            return output;
 
         } else if (criteria === "cheap") {
 
@@ -95,9 +95,9 @@ class FlightBookingSystem {
             } else {
 
                 let output = "Cheap bookings:\n";
-                output += cheapFligts.map(f => `${f.passengerName} booked for flight ${f.flightNumber}.\n`).join('')
+                output += cheapFligts.map(f => `${f.passengerName} booked for flight ${f.flightNumber}.`).join('\n')
 
-               
+
                 return output;
 
             }
@@ -113,12 +113,12 @@ class FlightBookingSystem {
             if (expensiveFlights.length === 0) {
                 return "No expensive bookings found."
             } else {
-               
+
                 let output = "Expensive bookings:\n";
-                output += expensiveFlights.map(f => `${f.passengerName} booked for flight ${f.flightNumber}.\n`).join('')
+                output += expensiveFlights.map(f => `${f.passengerName} booked for flight ${f.flightNumber}.`).join('\n')
 
                 return output
-            } 
+            }
         }
 
     }
@@ -126,12 +126,14 @@ class FlightBookingSystem {
 }
 
 const system = new FlightBookingSystem("TravelWorld");
-console.log(system.addFlight("AA101", "Los Angeles", "09:00 AM", 50));
-console.log(system.addFlight("BB202", "New York", "10:30 AM", 80));
+console.log(system.addFlight("AA101", "Los Angeles", "09:00 AM", 250));
+console.log(system.addFlight("BB202", "New York", "10:30 AM", 180));
 console.log(system.bookFlight("Alice", "AA101"));
 console.log(system.bookFlight("Bob", "BB202"));
-console.log(system.showBookings("expensive"));
-console.log(system.showBookings("cheap"));
+console.log(system.showBookings("all"));
+
+
+
 
 
 

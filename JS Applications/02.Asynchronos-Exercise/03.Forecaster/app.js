@@ -9,14 +9,12 @@ function attachEvents() {
     const response = await fetch(
       `http://localhost:3030/jsonstore/forecaster/locations`,
     );
-    const text = await response.json();
-    let code = '';
-    text.forEach((element) => {
-      if (element.name === location) {
-        code = element.code;
-        return;
-      }
-    });
+    const locations = await response.json();
+
+    const code = locations.find(l => l.name === location)?.code;
+
+
+
     const response2 = await fetch(
       `http://localhost:3030/jsonstore/forecaster/today/${code}`,
     );

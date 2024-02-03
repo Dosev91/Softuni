@@ -5,7 +5,7 @@ function solve() {
 
   let nextStop = 'depot';
 
-  async function depart() {
+  const depart = async () => {
     arriveInput.disabled = false;
     deparInput.disabled = true;
 
@@ -17,7 +17,7 @@ function solve() {
     info.textContent = `Next stop ${stop.name}`;
   }
 
-  async function arrive() {
+  const arrive = async () => {
     deparInput.disabled = false;
     arriveInput.disabled = true;
 
